@@ -57,7 +57,7 @@ endpoint = "https://models.github.ai/inference"
 model = "openai/gpt-4.1-nano"
 
 
-
+question = input("Enter your question: ")
 # Complaint letter recogniser
 
 # Generate me a mock complaint letter
@@ -75,7 +75,7 @@ client = openai.OpenAI(
     api_key=token,
     base_url=endpoint)
 
-class LetterInformation(BaseModel):
+class LithuanianQuestionCheck(BaseModel):
     """
     LetterInformation class for analyzing letter content.
 
@@ -93,7 +93,7 @@ class LetterInformation(BaseModel):
                                    about the classification if it is a complaint or not. 
                                    The score is up to 1 and 0 is the lowest confidence.
     """
-    is_complaint: bool
+    is_lithuanian_language: bool
     is_complaint_reason: str
     confidence_score: float
 
